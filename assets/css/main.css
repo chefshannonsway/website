@@ -3504,16 +3504,16 @@ body.single #wrapper {
 #intro .logo {
   border-bottom: 0;
   display: inline-block;
-  margin: 0 0 1em 0;
+  /* margin: 0 0 1em 0; */
   overflow: hidden;
   position: relative;
-  width: 4em;
+  width: 100%;
 }
 
 #intro .logo img {
   display: block;
-  margin-left: -0.25em;
-  width: 4.5em;
+  /* margin-left: -0.25em; */
+  width: 100%;
 }
 
 #intro header h2 {
