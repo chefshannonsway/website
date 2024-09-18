@@ -3504,7 +3504,7 @@ body.single #wrapper {
 #intro .logo {
   border-bottom: 0;
   display: inline-block;
-  /* margin: 0 0 1em 0; */
+  margin-bottom: 40px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -3512,7 +3512,6 @@ body.single #wrapper {
 
 #intro .logo img {
   display: block;
-  /* margin-left: -0.25em; */
   width: 100%;
 }
 
