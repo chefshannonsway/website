@@ -1995,9 +1995,12 @@ button,
   white-space: nowrap;
 }
 
-.none {
-  text-decoration: none;
+.download-link {
+  text-decoration: none; /* Removes underline */
+  border: none; /* Removes any border */
+  cursor: pointer; /* Changes the cursor to a pointer */
 }
+
 
 input[type="submit"]:hover,
 input[type="reset"]:hover,
