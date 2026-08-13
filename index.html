@@ -1,1116 +1,1306 @@
 <!doctype html>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="en">
   <head>
-    <title>Chef Shannon's Way</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Chef Shannon's Way — Plant-Based Cooking Classes &amp; Cookbooks
+    </title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
+      name="description"
+      content="Chef Shannon Bush teaches plant-based cooking classes across the Coachella Valley, writes vegan cookbooks, and leads culinary tours to Japan."
     />
+    <link rel="icon" href="images/old-transparent-logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       src="https://kit.fontawesome.com/0b64215f40.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="/images/headshot.jpg" />
+
+    <style>
+      /* ---------- Tokens ---------- */
+      :root {
+        --forest: #26362a;
+        --forest-deep: #1a2620;
+        --ink: #20291d;
+        --ivory: #f6f1e3;
+        --sage: #e7e8d4;
+        --gold: #b8863b;
+        --gold-light: #d7ad64;
+        --line: rgba(32, 41, 29, 0.16);
+        --line-on-dark: rgba(246, 241, 227, 0.22);
+        --max: 1120px;
+        --radius: 3px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ivory);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        line-height: 1.12;
+        margin: 0;
+      }
+      p {
+        margin: 0 0 1em;
+      }
+      .container {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      ::selection {
+        background: var(--gold);
+        color: var(--ivory);
+      }
+      :focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      /* ---------- Eyebrow / section heading pattern ---------- */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7em;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 600;
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 0 0 18px;
+      }
+      .eyebrow svg {
+        width: 22px;
+        height: 22px;
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+      .section-head {
+        max-width: 640px;
+        margin: 0 0 52px;
+      }
+      .section-head h2 {
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+      }
+      .section-head p {
+        margin-top: 14px;
+        color: var(--ink);
+        opacity: 0.78;
+        max-width: 52ch;
+      }
+      .section-head.center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .section-head.center p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      section {
+        padding: 96px 0;
+      }
+      .bg-ivory {
+        background: var(--ivory);
+      }
+      .bg-sage {
+        background: var(--sage);
+      }
+      .bg-forest {
+        background: var(--forest);
+        color: var(--ivory);
+      }
+      .bg-forest .eyebrow {
+        color: var(--gold-light);
+      }
+      .bg-forest h2,
+      .bg-forest h1 {
+        color: var(--ivory);
+      }
+
+      /* ---------- Leaf motif (signature element) ---------- */
+      .leaf-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin: 0 auto 40px;
+        opacity: 0.8;
+      }
+      .leaf-divider .rule {
+        width: 64px;
+        height: 1px;
+        background: var(--line);
+      }
+      .bg-forest .leaf-divider .rule {
+        background: var(--line-on-dark);
+      }
+      .leaf-divider svg {
+        width: 20px;
+        height: 20px;
+        color: var(--gold);
+      }
+
+      /* ---------- Buttons ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        font-family: "Work Sans";
+        font-weight: 600;
+        font-size: 0.86rem;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        padding: 14px 26px;
+        border-radius: var(--radius);
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: var(--forest-deep);
+      }
+      .btn-primary:hover {
+        background: var(--gold-light);
+      }
+      .btn-outline {
+        border-color: currentColor;
+        color: inherit;
+        background: transparent;
+      }
+      .btn-outline:hover {
+        background: rgba(184, 134, 59, 0.12);
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .bg-forest .btn-outline {
+        border-color: var(--line-on-dark);
+      }
+      .bg-forest .btn-outline:hover {
+        border-color: var(--gold-light);
+        color: var(--gold-light);
+        background: rgba(215, 173, 100, 0.1);
+      }
+
+      /* ---------- Header ---------- */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        background: var(--forest);
+        color: var(--ivory);
+        border-bottom: 1px solid var(--line-on-dark);
+      }
+      .site-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 78px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--ivory);
+      }
+      .brand img {
+        height: 34px;
+        width: 34px;
+        object-fit: contain;
+      }
+      .brand span {
+        font-family: "Fraunces";
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.28rem;
+        letter-spacing: 0.01em;
+      }
+      nav.main-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+      }
+      nav.main-nav a {
+        text-decoration: none;
+        color: var(--ivory);
+        opacity: 0.86;
+        font-size: 0.82rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 6px 0;
+        border-bottom: 1px solid transparent;
+        transition: 0.2s ease;
+      }
+      nav.main-nav a:hover {
+        opacity: 1;
+        border-color: var(--gold);
+        color: var(--gold-light);
+      }
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: 0;
+        color: var(--ivory);
+        cursor: pointer;
+        padding: 6px;
+      }
+      .nav-toggle svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      @media (max-width: 840px) {
+        nav.main-nav {
+          position: absolute;
+          top: 78px;
+          left: 0;
+          right: 0;
+          background: var(--forest);
+          border-bottom: 1px solid var(--line-on-dark);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        nav.main-nav.open {
+          max-height: 400px;
+        }
+        nav.main-nav ul {
+          flex-direction: column;
+          gap: 0;
+          padding: 8px 28px 20px;
+        }
+        nav.main-nav a {
+          display: block;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--line-on-dark);
+        }
+        .nav-toggle {
+          display: block;
+        }
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        background: var(--forest);
+        color: var(--ivory);
+        padding: 88px 0 100px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero .container {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold-light);
+        font-weight: 500;
+      }
+      .hero .lede {
+        margin-top: 22px;
+        font-family: "Fraunces";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.55;
+        color: rgba(246, 241, 227, 0.88);
+        max-width: 44ch;
+      }
+      .hero .actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 36px;
+      }
+      .hero-art {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-art svg {
+        width: min(320px, 80%);
+        color: var(--gold-light);
+        opacity: 0.9;
+      }
+      @media (max-width: 840px) {
+        .hero .container {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+        .hero-art {
+          order: -1;
+          margin-bottom: 8px;
+        }
+        .hero-art svg {
+          width: 180px;
+        }
+      }
+
+      /* ---------- Classes ---------- */
+      .classes-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .classes-grid img {
+        border-radius: var(--radius);
+      }
+      .classes-grid figure {
+        margin: 0;
+      }
+      .classes-grid figcaption {
+        font-size: 0.85rem;
+        opacity: 0.7;
+        margin-top: 10px;
+      }
+      .schedule-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .schedule-list li {
+        padding: 20px 0;
+        border-bottom: 1px dashed var(--line);
+      }
+      .schedule-list li:first-child {
+        padding-top: 0;
+      }
+      .schedule-head {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .schedule-date {
+        font-family: "Fraunces";
+        font-style: italic;
+        font-weight: 500;
+        color: var(--gold);
+        white-space: nowrap;
+        font-size: 1.02rem;
+      }
+      .schedule-topic {
+        font-weight: 500;
+      }
+      .schedule-desc {
+        margin: 8px 0 0;
+        font-size: 0.85rem;
+        line-height: 1.55;
+        opacity: 0.72;
+      }
+      .stream-note {
+        margin-top: 26px;
+        font-size: 0.92rem;
+      }
+      .stream-note a {
+        color: var(--gold);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 840px) {
+        .classes-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Events ---------- */
+      .event-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+        margin-top: 44px;
+      }
+      .event-card {
+        background: var(--ivory);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px 22px;
+        position: relative;
+      }
+      .event-card .leaf-mark {
+        width: 18px;
+        height: 18px;
+        color: var(--gold);
+        margin-bottom: 14px;
+      }
+      .event-card .date {
+        font-family: "Fraunces";
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.08rem;
+        margin-bottom: 8px;
+      }
+      .event-card .place {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .event-card .time {
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+      .events-intro {
+        max-width: 640px;
+      }
+      .events-intro p:last-child {
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+
+      /* ---------- Cookbooks ---------- */
+      .book-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+      .book-card {
+        background: var(--sage);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        transition: 0.25s ease;
+      }
+      .book-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 28px rgba(32, 41, 29, 0.14);
+      }
+      .book-card .cover {
+        background: var(--ivory);
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+      }
+      .book-card .cover img {
+        max-height: 280px;
+        width: auto;
+        box-shadow: 0 12px 24px rgba(32, 41, 29, 0.18);
+      }
+      .book-card .info {
+        padding: 22px 26px 26px;
+      }
+      .book-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+      }
+      .book-card .tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .book-card .cta {
+        margin-top: 14px;
+        font-weight: 600;
+        font-size: 0.86rem;
+        color: var(--forest);
+      }
+      .book-card .cta svg {
+        width: 14px;
+        height: 14px;
+        margin-left: 4px;
+        vertical-align: -2px;
+      }
+      @media (max-width: 760px) {
+        .book-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Recordings (dark band) ---------- */
+      .recordings .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .recordings img {
+        border-radius: var(--radius);
+      }
+      @media (max-width: 840px) {
+        .recordings .container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Japan trip ---------- */
+      .japan .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .japan img {
+        border-radius: var(--radius);
+      }
+      .japan .quote {
+        font-family: "Fraunces";
+        font-style: italic;
+        font-size: 1.15rem;
+        margin-top: 18px;
+        color: var(--forest);
+        opacity: 0.85;
+      }
+      @media (max-width: 840px) {
+        .japan .container {
+          grid-template-columns: 1fr;
+        }
+        .japan .art {
+          order: -1;
+        }
+      }
+
+      /* ---------- About ---------- */
+      .about .container {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .about-photo {
+        position: relative;
+      }
+      .about-photo img {
+        border-radius: var(--radius);
+        width: 100%;
+      }
+      .about-photo::after {
+        content: "";
+        position: absolute;
+        inset: 16px -16px -16px 16px;
+        z-index: -1;
+        border: 1px solid var(--gold);
+        border-radius: var(--radius);
+      }
+      .about h3 {
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-family: "Work Sans";
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .about p {
+        font-size: 1.05rem;
+      }
+      @media (max-width: 840px) {
+        .about .container {
+          grid-template-columns: 1fr;
+        }
+        .about-photo {
+          max-width: 280px;
+          margin: 0 auto 12px;
+        }
+      }
+
+      /* ---------- Contact ---------- */
+      .contact {
+        text-align: center;
+      }
+      .contact .section-head {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .email-link {
+        font-family: "Fraunces";
+        font-style: italic;
+        font-weight: 500;
+        font-size: clamp(1.4rem, 3.4vw, 2.1rem);
+        color: var(--gold-light);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: 0.2s;
+      }
+      .email-link:hover {
+        border-color: var(--gold-light);
+      }
+      .social-row {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 26px;
+        margin: 40px 0 0;
+        padding: 0;
+      }
+      .social-row a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--line-on-dark);
+        border-radius: 50%;
+        color: var(--ivory);
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      .social-row a:hover {
+        border-color: var(--gold-light);
+        color: var(--gold-light);
+      }
+      .social-row i {
+        font-size: 1.05rem;
+      }
+
+      /* ---------- Footer ---------- */
+      footer {
+        background: var(--forest-deep);
+        color: rgba(246, 241, 227, 0.6);
+        padding: 26px 0;
+        text-align: center;
+      }
+      footer .container {
+        display: block;
+        text-align: center;
+      }
+      footer p {
+        margin: 0;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+        text-align: center;
+      }
+
+      /* ---------- Reveal-on-scroll ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
   </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header id="header">
-        <h1><a href="index.html">Chef Shannon's Way</a></h1>
-        <nav class="links">
-          <!-- <ul>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Ipsum</a></li>
-            <li><a href="#">Feugiat</a></li>
-            <li><a href="#">Tempus</a></li>
-            <li><a href="#">Adipiscing</a></li>
-          </ul> -->
-        </nav>
-        <nav class="main">
-          <!-- <ul>
-            <li class="search">
-              <a class="fa-search" href="#search">Search</a>
-              <form id="search" method="get" action="#">
-                <input type="text" name="query" placeholder="Search" />
-              </form>
-            </li>
-            <li class="menu">
-              <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-          </ul> -->
-        </nav>
-      </header>
+  <body>
+    <!-- Hidden defs: reusable leaf motif -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <g
+          id="leafShape"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+        >
+          <path d="M0,0 C9,-7 13,-21 0,-42 C-13,-21 -9,-7 0,0 Z" />
+          <path d="M0,-3 L0,-37" />
+        </g>
+        <symbol id="sprig" viewBox="0 0 140 260">
+          <path
+            d="M70 252 C 63 190 78 118 70 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(68,60) rotate(-52) scale(1.15)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(74,60) rotate(52) scale(1.15)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(65,108) rotate(-48) scale(1.3)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(77,108) rotate(48) scale(1.3)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(66,160) rotate(-46) scale(1.15)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(76,160) rotate(46) scale(1.15)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(70,210) rotate(-40) scale(1)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(72,210) rotate(40) scale(1)"
+          />
+          <use
+            href="#leafShape"
+            transform="translate(70,18) rotate(0) scale(1.1)"
+          />
+        </symbol>
+        <symbol id="leafSmall" viewBox="-16 -44 32 48">
+          <use href="#leafShape" transform="translate(0,0) scale(1)" />
+        </symbol>
+        <symbol id="leafSolid" viewBox="0 0 32 32">
+          <path
+            d="M16 3 C 25 9 27 18 16 29 C 5 18 7 9 16 3 Z"
+            fill="currentColor"
+          />
+          <path
+            d="M16 8 L16 24"
+            stroke="#000"
+            stroke-opacity=".18"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+        </symbol>
+      </defs>
+    </svg>
 
-      <!-- Menu -->
-      <section id="menu">
-        <!-- Search -->
-        <section>
-          <form class="search" method="get" action="#">
-            <input type="text" name="query" placeholder="Search" />
-          </form>
-        </section>
-
-        <!-- Links -->
-        <section>
-          <ul class="links">
-            <li>
-              <a href="#">
-                <h3>Lorem ipsum</h3>
-                <p>Feugiat tempus veroeros dolor</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>Dolor sit amet</h3>
-                <p>Sed vitae justo condimentum</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>Feugiat veroeros</h3>
-                <p>Phasellus sed ultricies mi congue</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>Etiam sed consequat</h3>
-                <p>Porta lectus amet ultricies</p>
-              </a>
-            </li>
+    <header class="site-header">
+      <div class="container">
+        <a href="#top" class="brand">
+          <img src="images/old-transparent-logo.png" alt="" />
+          <span>Chef Shannon's Way</span>
+        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          id="navToggle"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#cookbooks">Cookbooks</a></li>
+            <li><a href="#japan">Japan Trip</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-        </section>
+        </nav>
+      </div>
+    </header>
 
-        <!-- Actions -->
-        <section>
-          <ul class="actions stacked">
-            <li><a href="#" class="button large fit">Log In</a></li>
-          </ul>
-        </section>
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div>
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Coachella
+              Valley &middot; Plant-Based Cooking</span
+            >
+            <h1>Delicious food, <em>no sacrifice</em> required.</h1>
+            <p class="lede">
+              "I hope to show you that eating the plant-based way is not about
+              sacrifice, but instead, an introduction to delicious flavors and
+              ingredients with limitless combinations."
+            </p>
+            <div class="actions">
+              <a href="#classes" class="btn btn-primary"
+                >See upcoming classes</a
+              >
+              <a href="#cookbooks" class="btn btn-outline">Get the cookbooks</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <svg viewBox="0 0 140 260"><use href="#sprig" /></svg>
+          </div>
+        </div>
       </section>
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Posts -->
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2>
-                <a
-                  target="_blank"
-                  href="https://ranchomiragelibrary.libcal.com/calendar?t=d&q=Shannon%20Bush&cid=19186&cal=19186&inc=0"
-                  >Live Cooking Classes</a
-                >
-              </h2>
-              <p>At the Rancho Mirage Library & Observatory</p>
-            </div>
-            <div class="meta">
-              <!-- <time class="published" datetime="2015-11-01"></time> -->
-              <a href="#" class="author"
-                ><span class="name">Chef Shannon Bush</span
-                ><img src="images/headshot.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <a
-            target="_blank"
-            href="https://ranchomiragelibrary.libcal.com/calendar?t=d&q=Shannon%20Bush&cid=19186&cal=19186&inc=0"
-            class="image featured"
-            ><img src="images/librarybanner.jpg" alt=""
-          /></a>
-          <p>Click on the image above for more information about my classes</p>
-          <p>
-            Upcoming Cooking Classes: <br /><br />
-            <strong>Monday, April 13, 2026:</strong> What to Do With Tofu!
-            <br />
-            <br />
-            <strong>Monday, April 20, 2026:</strong> Desserts: from Simple to
-            Elegant <br /><br />
-            <strong>Monday, April 27, 2026:</strong> Wholesome Meals
-          </p>
-          <p>
-            Classes can be live streamed during the time of the event on the
-            <a
-              target="_blank"
-              href="https://www.youtube.com/@RanchoMirageLibraryObservatory/streams"
-              style="font-weight: bold"
+      <!-- Classes -->
+      <section id="classes" class="bg-ivory reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Rancho
+              Mirage Library &amp; Observatory</span
             >
-              Rancho Mirage Library YouTube Channel
-            </a>
-          </p>
-        </article>
-
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2>
-                <a href="#">Upcoming Events!</a>
-              </h2>
-              <p>Find Me All Over The Valley!</p>
-            </div>
-            <div class="meta">
-              <!-- <time class="published" datetime="2015-11-01"
-                >December 19, 2023</time
-              > -->
-              <a href="#" class="author"
-                ><span class="name">Chef Shannon Bush</span
-                ><img src="images/headshot.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <a href="#" class="image featured"
-            ><img src="images/upcomingeventsbanner.png" alt=""
-          /></a>
-          <p>
-            The following five events are a series of cooking classes with lunch
-            sponsored by the Jewish Family Services of the Desert.
-          </p>
-          <p>
-            Please call the Jewish Family Services of the Desert to sign up!
-          </p>
-          <p>
-            <strong>June 17, 2026</strong><br />
-            Joslyn Center, Palm Springs, CA — 11:00AM-1:30PM
-          </p>
-          <p>
-            <strong>June 23, 2026</strong><br />
-            Desert Hot Springs Center, Desert Hot Springs, CA — 12:00PM-2:00PM
-          </p>
-          <p>
-            <strong>July 2, 2026</strong><br />
-            Park David Senior Apartments, Cathedral City, CA — 11:00AM-1:00PM
-          </p>
-          <p>
-            <strong>July 8, 2026</strong><br />
-            James O Jessie Highland Unity Center, Palm Springs, CA — 10:00AM
-          </p>
-          <p>
-            <strong>July 17, 2026</strong><br />
-            Cathedral City Senior Center, Cathedral City, CA — 1:00PM
-          </p>
-
-          <!-- <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">General</a></li>
-              <li><a href="#" class="icon solid fa-heart">28</a></li>
-              <li><a href="#" class="icon solid fa-comment">128</a></li>
-            </ul>
-          </footer> -->
-        </article>
-
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2>
-                <a target="_blank">Check Out Both of My Cookbooks!</a>
-              </h2>
-              <p>Check out my new plant-based cookbooks!</p>
-            </div>
-            <div class="meta">
-              <!-- <time class="published" datetime="2015-11-01"
-                >December 19, 2023</time
-              > -->
-              <a href="#" class="author"
-                ><span class="name">Chef Shannon Bush</span
-                ><img src="images/headshot.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <div style="display: flex; justify-content: center; gap: 20px">
-            <a
-              target="_blank"
-              href="https://www.amazon.com/dp/B0DMQ7RTXP/ref=sr_1_1?dib=eyJ2IjoiMSJ9.yqg2XqggQv1Knz3vHkCig3LVZqL6Wc0c65C2A8lUvTiN_NBJCoQ9JPBrOy2VkFUlly4ghDauWrWR1SR2opKOV7C5knLzHvYI69cEqDqMRzaTt1jxr-O6k3G-R1nG30yf4VQLO7_PPIUkqWUc7DLz2gJcmAugOn98YY8XrUN0E3dqEo2I01-QzFyX5lmpIM4uLP3nAacfVxvaa9EQ1F6b6uReJpaGhPSO7oizX-ZUDup4PqdFKMYQb9nW2ITakKy1TyjmaNiJHM8NzKrG2imJpv8hv7NuZGrSlNtQbruIlnI.AeSZrVlWvaEM11RQ6Ew8LkCSiXgVFDiJ9o5lh4o9BMs&dib_tag=se&keywords=help+a+vegans+coming+to+dinner&qid=1731374121&s=amazon-devices&sr=1-1"
-              style="flex: 1 1 50%; max-width: 300px"
-            >
-              <img
-                src="/images/cookbook.jpg"
-                alt=""
-                style="width: 100%; height: 85%"
-              />
-            </a>
-
-            <a
-              target="_blank"
-              href="https://www.amazon.com/Soups-Salads-Sandwiches-Chef-Shannons/dp/B0FJFWGRQD/ref=sr_1_1?crid=2W0CC7F331NEE&dib=eyJ2IjoiMSJ9.jAovNODHxiu2ecWqLy463w.HXEdRrGrv1dpknaUDtRqRvcS-Qv_-ZDy7meNhRGitJs&dib_tag=se&keywords=soups%2C+salads+and+sandwiches+chef+shannons+way&qid=1754509037&sprefix=%2Caps%2C159&sr=8-1"
-              style="flex: 1 1 50%; max-width: 300px"
-            >
-              <img
-                src="/images/newbook-cover.jpg"
-                alt=""
-                style="width: 100%; height: 85%"
-              />
-            </a>
-          </div>
-
-          <p>
-            Please check out my new cookbook! Available in ebook and paperback
-            editions. Click on the image to take you to the amazon store page!
-          </p>
-          <p>Order Today!</p>
-          <!-- <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">General</a></li>
-              <li><a href="#" class="icon solid fa-heart">28</a></li>
-              <li><a href="#" class="icon solid fa-comment">128</a></li>
-            </ul>
-          </footer> -->
-        </article>
-
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2>
-                <a
-                  target="_blank"
-                  href="https://www.youtube.com/playlist?list=PLerOi8mOj0Uil0MycZWE3rowmUG459Pq7"
-                  >Live Cooking Classes</a
-                >
-              </h2>
-              <p>At the Rancho Mirage Library & Observatory</p>
-            </div>
-            <div class="meta">
-              <time class="published" datetime="2015-11-01"
-                >December 19, 2023</time
-              >
-              <a href="#" class="author"
-                ><span class="name">Chef Shannon Bush</span
-                ><img src="images/headshot.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <a
-            target="_blank"
-            href="https://www.youtube.com/playlist?list=PLerOi8mOj0Uil0MycZWE3rowmUG459Pq7"
-            class="image featured"
-            ><img src="images/knife-pic.jpg" alt=""
-          /></a>
-          <p>
-            Click on the image above to see all of recordings of my classes in a
-            playlist on YouTube!
-          </p>
-          <p>
-            I have the honor to give live vegan cooking classes at the Rancho
-            Mirage Library, where I demonstrate how to create delicious,
-            plant-based dishes. These classes focus on teaching participants the
-            basics of vegan cooking, from selecting the right ingredients to
-            mastering techniques that bring out the best flavors in plant-based
-            meals. The classes are designed to be engaging and informative,
-            helping attendees feel confident in their ability to prepare
-            healthy, sustainable, and tasty vegan meals at home.
-          </p>
-          <!-- <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">General</a></li>
-              <li><a href="#" class="icon solid fa-heart">28</a></li>
-              <li><a href="#" class="icon solid fa-comment">128</a></li>
-            </ul>
-          </footer> -->
-        </article>
-
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2>
-                <a href="#">Do you like to travel?</a>
-              </h2>
-              <p>Join me to discover Japan from a vegan foodies perspective</p>
-            </div>
-            <div class="meta">
-              <a href="#" class="author"
-                ><span class="name">Chef Shannon Bush</span
-                ><img src="images/headshot.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <!-- <p>
-            Join me for an authentic tour of Japan where I seek to show you
-            lesser known attractions as well as a glimpse into everyday life.
-            This trip is for the active, curious traveler who is excited to try
-            new experiences while in the company of our small group. For
-            example, I will lead you around Tokyo using the train system rather
-            than booking a charter bus. You will be amazed at what you learn
-            about the people and the country by commuting with locals. The
-            trains are incredibly clean, safe, and ultra punctual. The people
-            are kind, helpful and respectful - all of this would be missed
-            riding on a private bus.
-          </p> -->
-          <div style="padding-bottom: 32px">
-            <!-- <a
-              target="_blank"
-              href="./files/Red & Green Illustration Travel Agent Poster.png"
-              style="
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                padding-bottom: 20px;
-              "
-            >
-              <img
-                src="files/Red & Green Illustration Travel Agent Poster.png"
-                alt=""
-                style="width: 50%; height: auto"
-              />
-            </a> -->
-
-            <div>
-              <div style="display: flex; justify-content: center">
-                <a
-                  target="_blank"
-                  href="/files/2026_itinerary.pdf"
-                  style="flex: 1 1 50%; max-width: 300px"
-                >
-                  <img
-                    src="/images/2026_trip_cover.png"
-                    alt=""
-                    style="width: 100%; height: 100%"
-                  />
-                </a>
-              </div>
-              <p></p>
-              <p>
-                Dear Friends, please join me on an upcoming trip to beautiful
-                Japan from May 9th - May 24th 2026!
-              </p>
-              <p>Click the image above for a detailed itinerary</p>
-              <p>- Chef Shannon</p>
-              <!-- <p>Click the button to see some more details about the trip:</p> -->
-            </div>
-            <!-- <a
-              class="download-link"
-              target="_blank"
-              href="./files/Japan Itinerary.pdf"
-            >
-              <button>View Detailed Itinerary</button>
-            </a> -->
-          </div>
-
-          <!-- <p>The rough itinerary is as follows:</p>
-          <p>
-            Arrive in Tokyo with lodging in a less touristy neighborhood
-            boutique hotel. Explore Tokyo via foot and the famous train system.
-            Choose to explore on your own or share some city adventures with me
-            such as:
-          </p>
-          <p>
-            - Evening kayak tour of the city (no kayaking experience required)
-            <br />
-            - Visit an outdoor food market and sample some vegan ice cream
-            (black sesame is a must try!) <br />
-            - Shopping excursion on famous Kappabashi Street where you can buy
-            anything a home chef desires (knives, ceramics, kitchen gadgets)
-            <br />
-            - Dine with me at some of my favorite eateries which includes eating
-            ramen at a train station 🍲 - A day at Chef Kurinas countryside home
-            kitchen in Saitama where she will teach us how to make tofu, then we
-            will all work together to create and enjoy a vegan feast <br />
-            - Bullet train excursion to the mountains to see the famous Japanese
-            Macaques (Snow Monkeys) with 2 nights in a 1300 year old village
-            that is famous for its Onsens (natural hot springs) <br />
-            - 1 night at a Buddist Monastery that includes 2 vegan meals
-            <br />
-            - Bullet train trip to a 15th century castle
-          </p> -->
-          <!-- <p>Coming Holiday Season in 2024!</p> -->
-          <!-- <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">General</a></li>
-              <li><a href="#" class="icon solid fa-heart">28</a></li>
-              <li><a href="#" class="icon solid fa-comment">128</a></li>
-            </ul>
-          </footer> -->
-        </article>
-
-        <!-- Post -->
-        <!-- <article class="post">
-          <header>
-            <div class="title">
-              <h2>
-                <a href="single.html"
-                  >Ultricies sed magna euismod enim vitae gravida</a
-                >
-              </h2>
-              <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-            </div>
-            <div class="meta">
-              <time class="published" datetime="2015-10-25"
-                >October 25, 2015</time
-              >
-              <a href="#" class="author"
-                ><span class="name">Jane Doe</span
-                ><img src="images/avatar.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <a href="single.html" class="image featured"
-            ><img src="images/pic02.jpg" alt=""
-          /></a>
-          <p>
-            Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
-            Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna
-            enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non
-            congue ullam corper.
-          </p>
-          <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">General</a></li>
-              <li><a href="#" class="icon solid fa-heart">28</a></li>
-              <li><a href="#" class="icon solid fa-comment">128</a></li>
-            </ul>
-          </footer>
-        </article> -->
-
-        <!-- Post -->
-        <!-- <article class="post">
-          <header>
-            <div class="title">
-              <h2><a href="single.html">Euismod et accumsan</a></h2>
-              <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-            </div>
-            <div class="meta">
-              <time class="published" datetime="2015-10-22"
-                >October 22, 2015</time
-              >
-              <a href="#" class="author"
-                ><span class="name">Jane Doe</span
-                ><img src="images/avatar.jpg" alt=""
-              /></a>
-            </div>
-          </header>
-          <a href="single.html" class="image featured"
-            ><img src="images/pic03.jpg" alt=""
-          /></a>
-          <p>
-            Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
-            Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna
-            enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non
-            congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed
-            vitae justo condimentum, porta lectus vitae, ultricies congue
-            gravida diam non fringilla. Cras vehicula tellus eu ligula viverra,
-            ac fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.
-          </p>
-          <footer>
-            <ul class="actions">
-              <li>
-                <a href="single.html" class="button large">Continue Reading</a>
-              </li>
-            </ul>
-            <ul class="stats">
-              <li><a href="#">General</a></li>
-              <li><a href="#" class="icon solid fa-heart">28</a></li>
-              <li><a href="#" class="icon solid fa-comment">128</a></li>
-            </ul>
-          </footer>
-        </article> -->
-
-        <!-- Post -->
-        <!--
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Elements</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-10-18">October 18, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-
-								<section>
-									<h3>Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3>Lists</h3>
-									<div class="row">
-										<div class="col-6 col-12-medium">
-											<h4>Unordered</h4>
-											<ul>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Sagittis adipiscing.</li>
-												<li>Felis enim feugiat.</li>
-											</ul>
-											<h4>Alternate</h4>
-											<ul class="alt">
-												<li>Dolor pulvinar etiam.</li>
-												<li>Sagittis adipiscing.</li>
-												<li>Felis enim feugiat.</li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-medium">
-											<h4>Ordered</h4>
-											<ol>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Etiam vel felis viverra.</li>
-												<li>Felis enim feugiat.</li>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Etiam vel felis lorem.</li>
-												<li>Felis enim et feugiat.</li>
-											</ol>
-											<h4>Icons</h4>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-											</ul>
-										</div>
-									</div>
-									<h3>Actions</h3>
-									<div class="row">
-										<div class="col-6 col-12-medium">
-											<ul class="actions">
-												<li><a href="#" class="button">Default</a></li>
-												<li><a href="#" class="button">Default</a></li>
-												<li><a href="#" class="button">Default</a></li>
-											</ul>
-											<ul class="actions small">
-												<li><a href="#" class="button small">Small</a></li>
-												<li><a href="#" class="button small">Small</a></li>
-												<li><a href="#" class="button small">Small</a></li>
-											</ul>
-											<ul class="actions stacked">
-												<li><a href="#" class="button">Default</a></li>
-												<li><a href="#" class="button">Default</a></li>
-												<li><a href="#" class="button">Default</a></li>
-											</ul>
-											<ul class="actions stacked">
-												<li><a href="#" class="button small">Small</a></li>
-												<li><a href="#" class="button small">Small</a></li>
-												<li><a href="#" class="button small">Small</a></li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-medium">
-											<ul class="actions stacked">
-												<li><a href="#" class="button fit">Default</a></li>
-												<li><a href="#" class="button fit">Default</a></li>
-											</ul>
-											<ul class="actions stacked">
-												<li><a href="#" class="button small fit">Small</a></li>
-												<li><a href="#" class="button small fit">Small</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-
-								<section>
-									<h3>Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3>Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions fit">
-										<li><a href="#" class="button fit">Fit</a></li>
-										<li><a href="#" class="button fit">Fit</a></li>
-										<li><a href="#" class="button fit">Fit</a></li>
-									</ul>
-									<ul class="actions fit small">
-										<li><a href="#" class="button fit small">Fit + Small</a></li>
-										<li><a href="#" class="button fit small">Fit + Small</a></li>
-										<li><a href="#" class="button fit small">Fit + Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-upload">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-save">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button disabled">Disabled</span></li>
-										<li><span class="button disabled icon solid fa-download">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3>Form</h3>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Category -</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Normal</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="col-12">
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" value="Send Message" /></li>
-													<li><input type="reset" value="Reset" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</section>
-
-								<section>
-									<h3>Image</h3>
-									<h4>Fit</h4>
-									<div class="box alt">
-										<div class="row gtr-uniform">
-											<div class="col-12"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-										</div>
-									</div>
-									<h4>Left &amp; Right</h4>
-									<p><span class="image left"><img src="images/pic07.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									<p><span class="image right"><img src="images/pic04.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-								</section>
-
-							</article>
-						-->
-
-        <!-- Pagination -->
-        <!-- <ul class="actions pagination">
-          <li>
-            <a href="" class="disabled button large previous">Previous Page</a>
-          </li>
-          <li><a href="#" class="button large next">Next Page</a></li>
-        </ul> -->
-      </div>
-
-      <!-- Sidebar -->
-      <section id="sidebar">
-        <!-- Intro -->
-        <section id="intro">
-          <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
-          <header>
-            <!-- <h2>Chef Shannon's Way</h2> -->
+            <h2>Live cooking classes</h2>
             <p>
-              I hope to show you that eating the plant-based way is not about
-              sacrifice, but instead, is an introduction to delicious flavors
-              and ingredients with limitless combinations
+              Free, hands-on classes held at the library — click the banner for
+              dates, times, and registration details.
             </p>
-          </header>
-        </section>
-
-        <!-- Mini Posts -->
-        <!-- <section>
-          <div class="mini-posts">
-            Mini Post
-            <article class="mini-post">
-              <header>
-                <h3><a href="single.html">Vitae sed condimentum</a></h3>
-                <time class="published" datetime="2015-10-20"
-                  >October 20, 2015</time
-                >
-                <a href="#" class="author"
-                  ><img src="images/avatar.jpg" alt=""
-                /></a>
-              </header>
-              <a href="single.html" class="image"
-                ><img src="images/pic04.jpg" alt=""
-              /></a>
-            </article>
-
-            Mini Post
-            <article class="mini-post">
-              <header>
-                <h3><a href="single.html">Rutrum neque accumsan</a></h3>
-                <time class="published" datetime="2015-10-19"
-                  >October 19, 2015</time
-                >
-                <a href="#" class="author"
-                  ><img src="images/avatar.jpg" alt=""
-                /></a>
-              </header>
-              <a href="single.html" class="image"
-                ><img src="images/pic05.jpg" alt=""
-              /></a>
-            </article>
-
-            Mini Post
-            <article class="mini-post">
-              <header>
-                <h3><a href="single.html">Odio congue mattis</a></h3>
-                <time class="published" datetime="2015-10-18"
-                  >October 18, 2015</time
-                >
-                <a href="#" class="author"
-                  ><img src="images/avatar.jpg" alt=""
-                /></a>
-              </header>
-              <a href="single.html" class="image"
-                ><img src="images/pic06.jpg" alt=""
-              /></a>
-            </article>
-
-            Mini Post
-            <article class="mini-post">
-              <header>
-                <h3><a href="single.html">Enim nisl veroeros</a></h3>
-                <time class="published" datetime="2015-10-17"
-                  >October 17, 2015</time
-                >
-                <a href="#" class="author"
-                  ><img src="images/avatar.jpg" alt=""
-                /></a>
-              </header>
-              <a href="single.html" class="image"
-                ><img src="images/pic07.jpg" alt=""
-              /></a>
-            </article>
           </div>
-        </section> -->
+          <div class="classes-grid">
+            <figure>
+              <a
+                href="https://ranchomiragelibrary.libcal.com/calendar?t=d&q=Shannon%20Bush&cid=19186&cal=19186&inc=0"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="images/librarybanner.jpg"
+                  alt="Rancho Mirage Library cooking class banner"
+                />
+              </a>
+              <figcaption>
+                Click the image for registration &amp; full class information.
+              </figcaption>
+            </figure>
+            <div>
+              <ul class="schedule-list">
+                <li>
+                  <div class="schedule-head">
+                    <span class="schedule-date">Oct 1, 2026</span>
+                    <span class="schedule-topic">Ramen & Gyoza!</span>
+                  </div>
+                  <p class="schedule-desc">
+                    Learn to make delicious ramen and savory gyoza, exploring
+                    flavorful broths, noodles, toppings, and your favorite
+                    dumpling fillings.
+                  </p>
+                </li>
+                <li>
+                  <div class="schedule-head">
+                    <span class="schedule-date">Oct 8, 2026</span>
+                    <span class="schedule-topic">Calling all Soup lovers!</span>
+                  </div>
+                  <p class="schedule-desc">
+                    Join me to learn how to quickly prepare delicious homemade
+                    soups from my cookbook, Soups, Salads and Sandwiches: Chef
+                    Shannon’s Way!
+                  </p>
+                </li>
+                <li>
+                  <div class="schedule-head">
+                    <span class="schedule-date">Oct 15, 2026</span>
+                    <span class="schedule-topic"
+                      >Holiday Appetizers & Desserts!</span
+                    >
+                  </div>
+                  <p class="schedule-desc">
+                    Get ready for the holidays with easy, shareable appetizers
+                    and desserts—perfect for potlucks and holiday gatherings.
+                  </p>
+                </li>
+              </ul>
+              <p class="stream-note">
+                Can't make it in person? Classes are livestreamed on the
+                <a
+                  href="https://www.youtube.com/@RanchoMirageLibraryObservatory/streams"
+                  target="_blank"
+                  rel="noopener"
+                  >Rancho Mirage Library YouTube channel</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Posts List -->
-        <!-- <section>
-          <ul class="posts">
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href="single.html"
-                      >Lorem ipsum fermentum ut nisl vitae</a
-                    >
-                  </h3>
-                  <time class="published" datetime="2015-10-20"
-                    >October 20, 2015</time
-                  >
-                </header>
-                <a href="single.html" class="image"
-                  ><img src="images/pic08.jpg" alt=""
-                /></a>
-              </article>
-            </li>
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href="single.html"
-                      >Convallis maximus nisl mattis nunc id lorem</a
-                    >
-                  </h3>
-                  <time class="published" datetime="2015-10-15"
-                    >October 15, 2015</time
-                  >
-                </header>
-                <a href="single.html" class="image"
-                  ><img src="images/pic09.jpg" alt=""
-                /></a>
-              </article>
-            </li>
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href="single.html"
-                      >Euismod amet placerat vivamus porttitor</a
-                    >
-                  </h3>
-                  <time class="published" datetime="2015-10-10"
-                    >October 10, 2015</time
-                  >
-                </header>
-                <a href="single.html" class="image"
-                  ><img src="images/pic10.jpg" alt=""
-                /></a>
-              </article>
-            </li>
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href="single.html"
-                      >Magna enim accumsan tortor cursus ultricies</a
-                    >
-                  </h3>
-                  <time class="published" datetime="2015-10-08"
-                    >October 8, 2015</time
-                  >
-                </header>
-                <a href="single.html" class="image"
-                  ><img src="images/pic11.jpg" alt=""
-                /></a>
-              </article>
-            </li>
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href="single.html"
-                      >Congue ullam corper lorem ipsum dolor</a
-                    >
-                  </h3>
-                  <time class="published" datetime="2015-10-06"
-                    >October 7, 2015</time
-                  >
-                </header>
-                <a href="single.html" class="image"
-                  ><img src="images/pic12.jpg" alt=""
-                /></a>
-              </article>
-            </li>
-          </ul>
-        </section> -->
-
-        <!-- About -->
-        <section class="blurb">
-          <h2>About</h2>
-          <p>
-            Chef Shannon Bush has been a plant-based chef for over 30 years. She
-            has worked as an Executive Chef, Head Baker, Caterer, and Culinary
-            Instructor. She is currently at work on her third cookbook and
-            having a wonderful time leading vegan tour groups throughout japan.
-            She loves to demonstrate the many benefits of plant-based eating and
-            to prove that healthy food can be delicious!
-          </p>
-          <!-- <ul class="actions">
-            <li><a href="#" class="button">Learn More</a></li>
-          </ul> -->
-        </section>
-
-        <section class="blurb">
-          <h2>Contact Me!</h2>
-          <img class="headshot-container" src="images/headshot.jpg" alt="" />
-          <p>
-            Contact me for information on cooking demonstrations or any other
-            questions.
-          </p>
-          <!-- <p>Phone: (760)851-1468</p> -->
-          <p>
-            Email:
-            <a href="mailto:chefshannonsway@gmail.com"
-              ><span class="label">chefshannonsway@gmail.com</span></a
+      <!-- Events -->
+      <section id="events" class="bg-sage reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Find Me
+              All Over the Valley</span
             >
-          </p>
-        </section>
+            <h2>Upcoming events</h2>
+            <!-- <div class="events-intro">
+              <p>
+                Five cooking classes with lunch, sponsored by the Jewish Family
+                Services of the Desert.
+              </p>
+              <p>
+                Please call the Jewish Family Services of the Desert to sign up!
+              </p>
+            </div> -->
+          </div>
+          <div class="event-cards">
+            <div class="event-card">
+              <svg class="leaf-mark" viewBox="-16 -44 32 48">
+                <use href="#leafSmall" />
+              </svg>
+              <div class="date">Aug 31, 2026</div>
+              <div class="place">
+                Private Event, Jewish Family Services, Rancho Mirage, CA
+              </div>
+              <div class="time">11:00 AM – 1:30 PM</div>
+            </div>
+            <!-- <div class="event-card">
+              <svg class="leaf-mark" viewBox="-16 -44 32 48">
+                <use href="#leafSmall" />
+              </svg>
+              <div class="date">June 23, 2026</div>
+              <div class="place">
+                Desert Hot Springs Center, Desert Hot Springs, CA
+              </div>
+              <div class="time">12:00 PM – 2:00 PM</div>
+            </div> -->
+            <!-- <div class="event-card">
+              <svg class="leaf-mark" viewBox="-16 -44 32 48">
+                <use href="#leafSmall" />
+              </svg>
+              <div class="date">July 2, 2026</div>
+              <div class="place">
+                Park David Senior Apartments, Cathedral City, CA
+              </div>
+              <div class="time">11:00 AM – 1:00 PM</div>
+            </div>
+            <div class="event-card">
+              <svg class="leaf-mark" viewBox="-16 -44 32 48">
+                <use href="#leafSmall" />
+              </svg>
+              <div class="date">July 8, 2026</div>
+              <div class="place">
+                James O Jessie Highland Unity Center, Palm Springs, CA
+              </div>
+              <div class="time">10:00 AM</div>
+            </div>
+            <div class="event-card">
+              <svg class="leaf-mark" viewBox="-16 -44 32 48">
+                <use href="#leafSmall" />
+              </svg>
+              <div class="date">July 17, 2026</div>
+              <div class="place">
+                Cathedral City Senior Center, Cathedral City, CA
+              </div>
+              <div class="time">1:00 PM</div>
+            </div> -->
+          </div>
+        </div>
+      </section>
 
-        <!-- Footer -->
-        <section id="footer">
-          <ul class="icons">
+      <!-- Cookbooks -->
+      <section id="cookbooks" class="bg-ivory reveal">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Now
+              Available</span
+            >
+            <h2>Two cookbooks, one mission</h2>
+            <p>
+              Available in ebook and paperback. Tap a cover to order on Amazon.
+            </p>
+          </div>
+          <div class="book-grid">
+            <a
+              class="book-card"
+              href="https://www.amazon.com/dp/B0DMQ7RTXP"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="cover">
+                <img
+                  src="images/cookbook.jpg"
+                  alt="Help! A Vegan's Coming to Dinner cookbook cover"
+                />
+              </div>
+              <div class="info">
+                <span class="tag">Cookbook</span>
+                <h3>Help! A Vegan's Coming to Dinner</h3>
+                <p>
+                  Approachable plant-based recipes for Holiday entertaining.
+                </p>
+                <span class="cta"
+                  >View on Amazon
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17 17 7M9 7h8v8" /></svg
+                ></span>
+              </div>
+            </a>
+            <a
+              class="book-card"
+              href="https://www.amazon.com/Soups-Salads-Sandwiches-Chef-Shannons/dp/B0FJFWGRQD"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="cover">
+                <img
+                  src="images/newbook-cover.jpg"
+                  alt="Soups, Salads & Sandwiches cookbook cover"
+                />
+              </div>
+              <div class="info">
+                <span class="tag">New Release</span>
+                <h3>Soups, Salads &amp; Sandwiches</h3>
+                <p>
+                  A fresh collection of vegan staples, done Chef Shannon's way.
+                </p>
+                <span class="cta"
+                  >View on Amazon
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17 17 7M9 7h8v8" /></svg
+                ></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recordings -->
+      <section id="recordings" class="bg-forest recordings reveal">
+        <div class="container">
+          <a
+            href="https://www.youtube.com/playlist?list=PLerOi8mOj0Uil0MycZWE3rowmUG459Pq7"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="images/knife-pic.jpg"
+              alt="Chef Shannon demonstrating knife skills"
+            />
+          </a>
+          <div>
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Watch
+              Anytime</span
+            >
+            <h2>Class recordings</h2>
+            <p style="margin-top: 18px; opacity: 0.9">
+              Every Rancho Mirage Library class is recorded and posted to
+              YouTube — from choosing the right ingredients to the techniques
+              that bring out the best flavors in plant-based meals. Engaging,
+              informative, and ready whenever you are.
+            </p>
+            <a
+              href="https://www.youtube.com/playlist?list=PLerOi8mOj0Uil0MycZWE3rowmUG459Pq7"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+              style="margin-top: 12px"
+              >Watch the playlist</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Japan Trip -->
+      <section id="japan" class="bg-sage japan reveal">
+        <div class="container">
+          <div>
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Culinary
+              Travel</span
+            >
+            <h2>Join me in Japan</h2>
+            <p style="margin-top: 18px">
+              Dear friends, please join me on an upcoming trip to beautiful
+              Japan — a vegan foodie's tour of the country, May 9–24, 2026.
+            </p>
+            <p class="quote">&mdash; Chef Shannon</p>
+            <a
+              href="files/2026_itinerary.pdf"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+              style="margin-top: 8px"
+              >View detailed itinerary</a
+            >
+          </div>
+          <div class="art">
+            <a href="files/2026_itinerary.pdf" target="_blank" rel="noopener">
+              <img
+                src="images/2026_trip_cover.png"
+                alt="2026 Japan trip cover"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="bg-ivory about reveal">
+        <div class="container">
+          <div class="about-photo">
+            <img src="images/headshot.jpg" alt="Chef Shannon Bush" />
+          </div>
+          <div>
+            <h3>About Chef Shannon</h3>
+            <p>
+              Chef Shannon Bush has been a plant-based chef for over 30 years,
+              working as an Executive Chef, Head Baker, Caterer, and Culinary
+              Instructor. She's currently at work on her third cookbook and
+              having a wonderful time leading vegan tour groups throughout
+              Japan.
+            </p>
+            <p>
+              She loves demonstrating the many benefits of plant-based eating —
+              and proving that healthy food can be truly delicious.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-forest contact reveal">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow"
+              ><svg viewBox="0 0 32 32"><use href="#leafSolid" /></svg>Get in
+              Touch</span
+            >
+            <h2>Let's cook together</h2>
+            <p style="color: rgba(246, 241, 227, 0.75)">
+              Questions about a cooking demonstration, a class, or the Japan
+              trip? Reach out any time.
+            </p>
+          </div>
+          <a class="email-link" href="mailto:chefshannonsway@gmail.com"
+            >chefshannonsway@gmail.com</a
+          >
+          <ul class="social-row">
             <li>
               <a
                 href="https://www.instagram.com/chefshannonsway/"
-                class="icon brands fa-instagram"
                 target="_blank"
-                ><span class="label">Instagram</span></a
-              >
+                rel="noopener"
+                aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </li>
             <li>
               <a
                 href="https://www.facebook.com/ChefShannonsWay?mibextid=tPfjzR"
-                class="icon brands fa-facebook-f"
                 target="_blank"
-                ><span class="label">Facebook</span></a
-              >
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
             </li>
             <li>
               <a
                 href="https://www.youtube.com/@chefshannonsway1739"
-                class="fa-brands fa-youtube"
                 target="_blank"
-                ><span class="label">YouTube</span></a
-              >
+                rel="noopener"
+                aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
             </li>
             <li>
-              <a
-                href="mailto:chefshannonsway@gmail.com"
-                class="icon solid fa-envelope"
-                ><span class="label">Email</span></a
-              >
+              <a href="mailto:chefshannonsway@gmail.com" aria-label="Email"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
             </li>
           </ul>
-          <p class="copyright">
-            &copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.
-            Images: <a href="http://unsplash.com">Unsplash</a>.
-          </p>
-        </section>
+        </div>
       </section>
-    </div>
+    </main>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Chef Shannon's Way. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // mobile nav
+      var navToggle = document.getElementById("navToggle");
+      var mainNav = document.getElementById("mainNav");
+      navToggle.addEventListener("click", function () {
+        var isOpen = mainNav.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", isOpen);
+      });
+      mainNav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          mainNav.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // scroll reveal
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          io.observe(el);
+        });
+      } else {
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+      }
+    </script>
   </body>
 </html>
